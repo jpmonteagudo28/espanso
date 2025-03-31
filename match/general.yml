@@ -1,0 +1,67 @@
+matches:
+  # Typo things
+  - trigger: "teh"
+    replace: "the"
+    propagate_case: true
+    left_word: true
+
+  - triggers: ["tot eh", "tot he"]
+    replace: "to the"
+    propagate_case: true
+    left_word: true
+
+
+  # Dates
+  - trigger: ";;date"
+    replace: "{{date}}"
+    vars: 
+      - name: date
+        type: date
+        params:
+          format: "%B %e, %Y"
+    label: "Full date"
+    left_word: true
+
+  - trigger: ";;dt"
+    replace: "{{date}}"
+    vars: 
+      - name: date
+        type: date
+        params:
+          format: "%Y-%m-%d"
+    label: "ISO 8601 date"
+    left_word: true
+
+  - trigger: ";;dm"
+    replace: "{{date}}"
+    vars: 
+      - name: date
+        type: date
+        params:
+          format: "%Y-%m-%d %H:%M:%S"
+    label: "ISO 8601 date time"
+    left_word: true
+
+  - trigger: ";;dz"
+    replace: "{{date}}"
+    vars: 
+      - name: date
+        type: date
+        params:
+          format: "%Y-%m-%dT%H:%M"
+    label: "ISO 8601 date time blog"
+    left_word: true
+
+  - trigger: "(;;dt"
+    replace: "({{date}})"
+    vars: 
+      - name: date
+        type: date
+        params:
+          format: "%Y-%m-%d"
+    label: "ISO 8601 date (in parens)"
+    left_word: true
+
+  - trigger: ";;path"
+    replace: |
+             C:\Users\jpmonteagudo\Documents\Projects\TICKET_NUMBER_HERE

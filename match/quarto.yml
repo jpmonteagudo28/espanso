@@ -1,0 +1,171 @@
+matches:
+  - trigger: ";;pdf"
+    replace: |
+      ---
+      title: "Title"
+      subtitle: "Subtitle
+      author: 
+        - name: "Juan Pablo Monteagudo"
+          orcid: 0009-0003-6465-6658
+          affiliation:
+              name: "Liberty University"
+              department: School of Health Sciences
+      date: {{yaml_date}}
+      epigraph:
+        - Epigraph here
+      format: 
+        pdf:
+          papersize: letter
+          linestretch: 1.5 
+          fontsize: 12pt
+          include-in-header:
+            - text: |
+                \usepackage[cmintegrals,cmbraces]{newtxmath}
+                \usepackage{ebgaramond-maths}
+                \usepackage[T1]{fontenc}
+          margin-left: 30mm
+          margin-right: 35mm
+          margin-top: 25mm
+          margin-bottom: 25mm
+          left-aligned: true
+          endnotes: true
+          block-headings: false
+          indent: true
+          toc: false
+          number-sections: false
+       editor: visual
+       fig-cap-location: top
+       pdf-engine: pdflatex
+       output_dir: output
+       bibliography: references.bib
+       csl: ../../ama.csl
+
+       abstract: |
+         ABSTRACT HERE
+
+       keywords:
+         - BLAH
+         - BLAH
+      ---
+    vars:
+      - name: yaml_date
+        type: date
+        params:
+          format: "%Y-%m-%d"
+    label: Quarto YAML header with formatting
+
+
+
+  - trigger: ";;rheader"
+    replace: |
+      ```{r setup, include = FALSE}
+         library(methods)
+         library(here)
+
+
+         set.seed(2899)
+
+         knitr::opts_chunk$set(fig.align = "center", fig.retina = 3,
+                          fig.width = 5.5, fig.height = (3 * 0.618),
+                          out.width = "90%", collapse = TRUE, 
+                          cache = TRUE, comment = "#>",
+                          autodep = TRUE)
+
+
+        options(digits = 3,
+                scipen = 999,
+                width = 300,
+                rlang_trace_top_env = rlang::current_env(),
+                rlang__backtrace_on_error = "none")
+
+       ```
+       
+       
+# YAML frontmatter for HTML sites
+  - trigger: ";;html"
+    replace: |
+      ---
+      title: "Title Here"
+      author: JP Monteagudo
+      date: {{yaml_date}}
+      format:
+        html:
+          css: styles.css
+          theme: flatly
+          fontsize: 1em
+          fontcolor: "#000635"
+          mainfont: Warbler Text
+          title-block-banner: true
+          title-block-banner-color: beige
+          backgroundcolor: "#f8f9f3"
+          code-fold: true
+          code-tools: true
+          code-overflow: wrap
+          code-line-numbers: false
+          highlight-style: a11y
+          code-link: true
+          anchor-sections: true
+          fig-cap-location: top
+          reference-location: margin
+          footnotes-hover: true
+      grid:
+        body-width: 725px
+        sidebar-width: 125px
+        margin-width: 450px
+        gutter-width: 2.50em
+      ---
+    vars:
+      - name: yaml_date
+        type: date
+        params:
+          format: "%Y-%m-%d"
+    label: Quarto YAML header for HTML
+
+
+# Latex new page command in quarto file
+  - trigger: ";;npg"
+    replace: |
+      \newpage
+      ## Section
+
+# CSS style sheet for class notes
+  - trigger: ";;css"
+    replace: |
+      h2 {
+        border-bottom: none;
+        color: #0a254e; /* Replace it with the color you want for your headings, but make sure to match inline code color */
+        font-style: regular;
+        font-weight: 500;
+        font-size: 1.55rem;
+        line-height: 1.3;
+      }
+
+      h3, h4, h5, h6 {
+        color: #0a254e; /* Replace it with the color you want */
+        font-style: italic;
+        font-weight: 400;
+        font-size: 1.35rem;
+        line-height: 1.5;
+      }
+
+      ul {
+        /* Replace it with the image you want. found at NC State site */
+        list-style-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath   d='M327.38,207.75,183.63,64l-47.26,48.25L279.14,256,136.37,399.75,183.63,448l192-192Z' fill='%23CC0000'/%3E%3C/svg%3E");
+        list-style-position: outside;
+      }
+
+      ul ul {
+        list-style-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 768 768'%3E%3Cpath   d='M491.07,311.63,275.45,96,183.63,192.75,418.71,384,183.63,575.25,275.45,672l288-288Z' fill='%23CC0000'/%3E%3C/svg%3E");
+        list-style-position: outside;
+      }
+
+      ul ul ul {
+        list-style-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 768 768'%3E%3Cpath   d='M491.07,311.63,275.45,96,183.63,192.75,418.71,384,183.63,575.25,275.45,672l288-288Z' fill='%23CC0000'/%3E%3C/svg%3E");
+        list-style-position: outside;
+      }
+      
+  - trigger: ";;rchunk"
+    replace: |
+      ```{r,echo = TRUE, eval = TRUE}
+      library()
+      ```

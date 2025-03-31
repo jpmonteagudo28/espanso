@@ -1,0 +1,99 @@
+matches:
+  - trigger: ";divide"
+    replace: "÷"
+
+  - trigger: ";done"
+    replace: "✅"
+
+  - trigger: ";down"
+    replace: "↓"
+
+  - trigger: ";end"
+    replace: "↘"
+
+  - trigger: ";enn"
+    replace: "–"
+
+  - trigger: ";enter"
+    replace: "⌅"
+
+  - trigger: ";esc"
+    replace: "⎋"
+
+  - trigger: ";fatright"
+    replace: "➜"
+
+  - trigger: ";gear"
+    replace: "⚙"
+
+  - trigger: ";heart"
+    replace: "♥"
+
+  - trigger: ";home"
+    replace: "↖"
+
+  - trigger: ";idea"
+    replace: "💡"
+
+  - trigger: ";incubation"
+    replace: "🚼"
+
+  - trigger: ";inprogress"
+    replace: "🔄"
+
+  - trigger: ";laquo"
+    replace: "«"
+
+  - trigger: ";left"
+    replace: "←"
+
+  - trigger: ";like"
+    replace: "👍"
+
+  - trigger: ";line"
+    replace: "⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯"
+
+  - trigger: ";lsaquo"
+    replace: "‹"
+
+  - trigger: ";minus"
+    replace: "−"
+
+  - trigger: ";no"
+    replace: "Nº"
+    label: "Numero"
+
+  - trigger: ";;indep"
+    replace: "⫫"
+
+  - trigger: ";^0"
+    replace: "⁰"
+
+  - trigger: ";^1"
+    replace: "¹"
+
+  - trigger: ";^2"
+    replace: "²"
+
+  - trigger: ";^3"
+    replace: "³"
+
+  - trigger: ";^4"
+    replace: "⁴"
+
+  - trigger: ";^5"
+    replace: "⁵"
+
+  - trigger: ";^6"
+    replace: "⁶"
+
+  - trigger: ";^7"
+    replace: "⁷"
+
+  - trigger: ";^8"
+    replace: "⁸"
+
+  - trigger: ";^9"
+    replace: "⁹"
+
+
